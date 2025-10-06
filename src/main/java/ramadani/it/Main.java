@@ -13,6 +13,10 @@ public class Main {
         System.out.println("Un CLIENT si e' connesso");
 
         System.out.println("ciao");
+        System.out.println("ciao");
+        System.out.println("ciao");
+        System.out.println("ciao");
+        
         //ciao come stai
     }
 }
