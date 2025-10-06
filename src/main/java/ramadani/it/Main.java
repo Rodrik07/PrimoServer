@@ -1,22 +1,22 @@
 package ramadani.it;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("Hello world!");
-        ServerSocket mioServerSocket = new ServerSocket(3000);
-        //il mio main quando arriva qui si ferma e quello sotto non viene eseguito fino a quando qualcuno si collega e mi restituisce un socket
-        Socket mioSocket =  mioServerSocket.accept();
-        System.out.println("Un CLIENT si e' connesso");
+        ServerSocket ss = new ServerSocket(3000);
+        Socket s = ss.accept();
+        System.out.println("Connected.");
+        BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+        PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+        String myString = in.readLine();
+        out.println(myString.toUpperCase());
 
-        System.out.println("ciao");
-        System.out.println("ciao");
-        System.out.println("ciao");
-        System.out.println("ciao");
-        
-        //ciao come stai
+        ss.close();
     }
 }
