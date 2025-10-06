@@ -11,6 +11,8 @@ public class Main {
         //il mio main quando arriva qui si ferma e quello sotto non viene eseguito fino a quando qualcuno si collega e mi restituisce un socket
         Socket mioSocket =  mioServerSocket.accept();
         System.out.println("Un CLIENT si e' connesso");
-        
+
+        System.out.println("ciao");
+        //ciao come stai
     }
 }
