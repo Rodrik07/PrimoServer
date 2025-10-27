@@ -9,14 +9,14 @@ import java.net.Socket;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ServerSocket ss = new ServerSocket(3000);
-        Socket s = ss.accept();
-        System.out.println("Connected.");
-        BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-        PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+        ServerSocket serverSocket = new ServerSocket(3000);
+        Socket socket = serverSocket.accept();
+        System.out.println("Connesso.");
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
         String myString = in.readLine();
         out.println(myString.toUpperCase());
 
-        ss.close();
+        serverSocket.close();
     }
 }
